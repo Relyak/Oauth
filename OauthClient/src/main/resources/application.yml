@@ -6,15 +6,15 @@ spring:
     oauth2:
       client:
         registration:
-          products-client-oidc:
+          account-client-oidc:
             provider: spring
-            client-id: client1
+            client-id: MyBanckApp
             client-secret: myClientSecretValue
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
             scope: openid
             client-name: account-client-oidc
-          products-client-authorization-code:
+          account-client-authorization-code:
             provider: spring
             client-id: MyBanckApp
             client-secret: myClientSecretValue
@@ -24,7 +24,7 @@ spring:
             client-name: account-client-authorization-code
         provider:
           spring:
-            issuer-uri: http://auth-server:9000
+            issuer-uri: "http://localhost:9000"
 #app.jwt.secret: SECRET-KEY-VALUE
 
 --- #prod

@@ -12,6 +12,7 @@ public class ResourceServerConfig {
         http.authorizeRequests()
                 .mvcMatchers("/account/**").authenticated()
                 .mvcMatchers("/account/**").hasAuthority("SCOPE_account.read")
+
                 .and()
                 .oauth2ResourceServer()
                 .jwt();
